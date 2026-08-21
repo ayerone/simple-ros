@@ -6,6 +6,8 @@ simple-ros is a from-scratch reimplementation of enough of ROS 2 (lyrical) to le
 
 The purpose is purely educational: let someone go through the beginner tutorials, build a real mental model of nodes/topics/services/actions/parameters, and then move to a real ROS 2 install where everything they learned (concepts, node graph vocabulary, message/service shapes, the rclpy API they wrote code against) carries over directly. Performance and efficiency are explicitly not goals here. Simplicity of implementation wins over speed or realism every time there's a tradeoff.
 
+Everything under `source/` is sourced from the upstream ROS 2 documentation repo, [github.com/ros2/ros2_documentation](https://github.com/ros2/ros2_documentation), on the `lyrical` branch. That's also the repo behind `docs.ros.org` (see "Referencing real ROS 2 source code" below for how to fetch from it when the site itself is unreachable) and the place to look first for any other doc page we might want to pull in later.
+
 Every tutorial page we ship should carry a short note at the top: "simple-ros, an easily-installable package to learn real [ROS 2](link)". That note has not been added yet; it's a pending content task against the `.rst` files already in `source/Tutorials/`.
 
 ## The one invariant that matters most
