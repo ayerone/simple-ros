@@ -100,6 +100,8 @@ My default call, open to override: use `tkinter` (Python stdlib, no extra depend
 - `simple-rqt-graph` showing nodes and topic/service/action connections (used in Understanding-ROS2-Topics to visualize the graph)
 - `simple-rqt-console` as a log viewer with severity filtering (used in Using-Rqt-Console)
 
+Dependencies are fine when they're well justified; the goal is a simple and convenient implementation, not a zero-dependency one. `simple-rqt-graph` should use `pydot`/Graphviz for graph layout rather than us writing a layout algorithm from scratch, the same way real `rqt_graph` does.
+
 ## `simple-ros2 bag`
 
 No need to match the real `mcap`/`sqlite3` storage format. A simple recorded-messages format (e.g. JSON Lines: topic, type, timestamp, serialized payload, one per line, plus a `metadata.yaml` alongside) is enough to support `record`/`play`/`info` with reasonably faithful relative timing on playback (not hard-realtime, just "plays back in roughly the recorded order and pacing" so the turtle-path-replay demo in Recording-And-Playing-Back-Data still works). Service and action introspection/recording (`--service`, `--action`, `ros2 service echo`, `ros2 action echo`) both depend on those channels supporting an introspection hook; simplest approach is to have every service/action connection optionally mirror its request/response (or goal/feedback/result) traffic to any introspection listener, gated by a parameter the same way real ROS 2 gates it (`service_configure_introspection`, `action_server_configure_introspection`, etc.) so the tutorial's parameter-toggle steps still make sense.
@@ -123,6 +125,24 @@ No need to match the real `mcap`/`sqlite3` storage format. A simple recorded-mes
 `simple-colcon`: `build [--symlink-install] [--packages-select ...] [--packages-up-to ...]`, `test [--packages-select ...]`
 
 `simple-rosdep`: `install -i --from-path src --rosdistro <distro> -y` can likely be closer to a no-op / trivial success message in simple-ros, since we don't have real OS package dependencies to resolve; still worth keeping the command so workspace-tutorial text ports unchanged.
+
+## Referencing real ROS 2 source code
+
+It's fine, and encouraged, to look at the actual upstream implementation when we're unsure how something is supposed to behave. The rule: read it for the *logic* (what algorithm it runs, what edge cases it handles, what a message's exact field layout is), not to copy code. Since our implementation language and communication model are both completely different from upstream's (pure Python, no DDS/RTPS, no daemon), there's rarely anything to copy anyway; what's valuable is the behavior. Good use: spawning an agent to read a specific upstream file or two and report back what logic it implements, then writing our own Python against that understanding.
+
+`docs.ros.org` itself is behind bot-protection (Anubis) that blocks both browser-fetch and plain `curl`. Every page there is rendered from the `ros2/ros2_documentation` GitHub repo though, so fetch the equivalent `.rst` from `raw.githubusercontent.com/ros2/ros2_documentation/lyrical/...` instead (this is exactly how this repo's tutorial pages were sourced).
+
+The full ROS 2 source tree is fetched upstream via `vcstool` against a repo manifest: `vcs import --input https://raw.githubusercontent.com/ros2/ros2/lyrical/ros2.repos src`. That manifest pulls in roughly 80 repos, most of which are irrelevant to us (rclcpp, rmw, DDS vendor implementations, etc.). It's more practical to fetch individual repos on GitHub as needed rather than doing the full checkout. The ones actually relevant to what we're building:
+
+- **`ros2/rclpy`** - the real Python client library; the reference for `Node`, publishers/subscribers/services/actions/parameters/executors behavior
+- **`ros2/ros2cli`** - the `ros2` command line tool itself, split into per-verb extension packages (`ros2topic`, `ros2service`, `ros2node`, `ros2param`, `ros2action`, `ros2interface`, `ros2pkg`, `ros2doctor`, `ros2launch`, ...). This is the most directly useful repo for `simple-ros2`'s CLI logic.
+- **`ros2/rosbag2`** - reference for `simple-ros2 bag`'s record/play/info behavior
+- **`ros2/rosidl`** and **`ros2/rosidl_python`** - reference for how `.msg`/`.srv`/`.action` files get turned into generated Python classes, for our interface-generation step
+- **`ros2/common_interfaces`** (`geometry_msgs`, `std_msgs`, `sensor_msgs`, ...), **`ros2/rcl_interfaces`**, **`ros2/example_interfaces`** - the actual `.msg`/`.srv` definitions; ground truth for exact field names/types/ordering, better than reading them back out of tutorial prose
+- **`ros/ros_tutorials`** - contains `turtlesim` itself; useful for exact spawn/teleport/pen/collision-with-wall behavior even though it's C++
+- **`ros-visualization/rqt_graph`**, **`ros-visualization/rqt_console`**, **`ros-visualization/rqt`** - reference for what `simple-rqt-*` needs to reproduce
+- **`colcon/colcon-core`** - reference for `simple-colcon`'s workspace/build/overlay behavior
+- **`ros-infrastructure/rosdep`** - reference for `simple-rosdep`, though we expect to implement this as close to a no-op
 
 ## Tutorial pages already copied into this repo
 
