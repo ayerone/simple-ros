@@ -66,7 +66,6 @@ This will run two turtlesim nodes:
 .. image:: images/turtlesim_multisim.png
 
 For now, don't worry about the contents of this launch file.
-You can find more information on ROS 2 launch in the :doc:`ROS 2 launch tutorials <../../Intermediate/Launch/Launch-Main>`.
 
 (Optional) Control the Turtlesim Nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,8 +94,6 @@ Summary
 
 The significance of what you've done so far is that you've run two turtlesim nodes with one command.
 Once you learn to write your own launch files, you'll be able to run multiple nodes - and set up their configuration - in a similar way, with the ``ros2 launch`` command.
-
-For more tutorials on ROS 2 launch files, see the :doc:`main launch file tutorial page<../../Intermediate/Launch/Launch-Main>`.
 
 Next steps
 ----------

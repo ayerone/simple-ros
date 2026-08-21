@@ -36,9 +36,6 @@ Steps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * :doc:`About ROS </About-ROS>`
-* :doc:`/Concepts/Basic/About-Nodes`
-* :doc:`/Concepts/Basic/Interfaces-Topics-Services-Actions`
-* :doc:`/Concepts/Basic/About-Parameters`
 
 2 Install ROS and turtlesim
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -380,8 +380,7 @@ You added their dependencies and executables to the package configuration files 
 Next steps
 ----------
 
-In the last few tutorials you've been utilizing interfaces to pass data across topics and services.
-Next, you'll learn how to :doc:`create custom interfaces <./Custom-ROS2-Interfaces>`.
+Next, you'll learn how to :doc:`use parameters in a class <./Using-Parameters-In-A-Class-Python>`.
 
 Related content
 ---------------

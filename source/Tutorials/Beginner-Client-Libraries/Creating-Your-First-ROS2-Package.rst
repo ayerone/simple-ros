@@ -534,4 +534,4 @@ Next steps
 ----------
 
 Next, let's add something meaningful to a package.
-You'll start with a simple publisher/subscriber system, which you can choose to write in either :doc:`C++ <./Writing-A-Simple-Cpp-Publisher-And-Subscriber>` or :doc:`Python <./Writing-A-Simple-Py-Publisher-And-Subscriber>`.
+You'll start with a simple :doc:`publisher/subscriber system <./Writing-A-Simple-Py-Publisher-And-Subscriber>`.

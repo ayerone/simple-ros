@@ -31,13 +31,12 @@ Everything else in the tutorial text (node names, topic echoes, service calls, Y
 
 ## Scope: Python only, for now
 
-Real ROS 2's beginner tutorials are written with parallel C++ and Python tracks. We are not implementing the C++ side:
+Real ROS 2's beginner tutorials are written with parallel C++ and Python tracks. We are not implementing the C++ side, and the corresponding pages have been removed from `source/` (not just left unbuilt):
 
-- `Writing-A-Simple-Cpp-Publisher-And-Subscriber`, `Writing-A-Simple-Cpp-Service-And-Client`, `Using-Parameters-In-A-Class-CPP` are out of scope. Only the Python variants of each get a simple-ros implementation.
-- `Pluginlib.rst` is excluded entirely. It's fundamentally about `dlopen`-style dynamic loading of shared libraries via `class_loader`/CMake; there's no meaningful Python analog that teaches the same real-ROS-2 skill, so reimplementing it would just be inventing a different lesson under the same name. If we want a "plugins" lesson later it should be scoped as a new decision, not a straight port.
-- `ros2 pkg create --build-type ament_cmake` and CMakeLists.txt editing steps are out of scope. `ament_python` is the only supported build type.
-
-One consequence: `Custom-ROS2-Interfaces.rst` in real ROS 2 requires an `ament_cmake` package (`rosidl_generate_interfaces()` in CMakeLists.txt) even when the interfaces are only consumed from Python. Since we have no CMake at all, our version needs a Python-native equivalent for declaring `.msg`/`.srv` files and generating code from them (see Interface generation below). This is a deliberate deviation from the literal upstream steps and that page's text will need editing to match, once we get to implementation.
+- `Writing-A-Simple-Cpp-Publisher-And-Subscriber.rst`, `Writing-A-Simple-Cpp-Service-And-Client.rst`, `Using-Parameters-In-A-Class-CPP.rst` are removed. Only the Python variant of each stays.
+- `Pluginlib.rst` is removed. It's fundamentally about `dlopen`-style dynamic loading of shared libraries via `class_loader`/CMake; there's no meaningful Python analog that teaches the same real-ROS-2 skill, so reimplementing it would just be inventing a different lesson under the same name. If we want a "plugins" lesson later it should be scoped as a new decision, not a straight port.
+- `Custom-ROS2-Interfaces.rst` is removed. In real ROS 2 it requires an `ament_cmake` package (`rosidl_generate_interfaces()` in CMakeLists.txt) even when the interfaces are only consumed from Python, and we have no CMake at all. The underlying concept (message/service types are just field lists in a text file, and you can define your own) is genuinely simple and worth teaching, but the tutorial as written is almost entirely CMake/`rosidl` packaging mechanics, which isn't something worth building a from-scratch interface-codegen system to reproduce faithfully. It's positioned as the last, capstone tutorial in real ROS 2's Beginner-Client-Libraries sequence, not core material. Candidate for a much shorter, simple-ros-native lesson later if we ever build custom interface support (see Interface generation below); not currently planned.
+- `ros2 pkg create --build-type ament_cmake` and CMakeLists.txt editing steps are out of scope generally. `ament_python` (renamed `simple_ament_python`) is the only supported build type.
 
 ## Distribution / workspace model
 
@@ -62,9 +61,9 @@ Explicit requirement: no background broker/daemon process shuttling messages bet
 
 The Python package we ship needs to provide top-level importable modules matching real ROS 2's namespaces exactly, since that's what the invariant above requires: `rclpy` (with `rclpy.node.Node`, `rclpy.executors.ExternalShutdownException`, `rclpy.parameter.Parameter`, etc.), and message/service/action packages: `std_msgs.msg`, `std_srvs.srv`, `geometry_msgs.msg`, `rcl_interfaces.msg`/`.srv`, `example_interfaces.srv` (`AddTwoInts`), and `turtlesim_msgs.msg`/`.srv`/`.action`.
 
-## Interface generation (custom msg/srv)
+## Interface generation (built-in msg/srv/action types only)
 
-Real ROS 2 uses `rosidl_generate_interfaces()` (CMake) to turn `.msg`/`.srv` files into generated Python (and C++) classes. We need a Python-only equivalent: given a package with `msg/*.msg` and `srv/*.srv` files (plus a lightweight declaration, since we have no CMakeLists.txt to call `rosidl_generate_interfaces()` from), `simple-colcon build` should generate importable Python classes with the same field names/types and the same `Request`/`Response` (for srv) or `Goal`/`Result`/`Feedback` (for action) structure real ROS 2 generates, so `from tutorial_interfaces.msg import Num` and `from tutorial_interfaces.srv import AddThreeInts` work exactly like upstream's tutorial shows. `ros2 interface show <type>` needs to print the same field-listing format shown in the tutorials (request/response separated by `---`).
+With `Custom-ROS2-Interfaces.rst` out of scope (see above), we don't need a general `.msg`/`.srv`-file-to-Python-class codegen pipeline. What we do need is hand-written Python classes for the fixed set of built-in interfaces the tutorials we're keeping actually reference: `geometry_msgs/msg/Twist`, `std_msgs.msg`, `std_srvs/srv/Empty`, `rcl_interfaces` (parameter-related messages/services), `example_interfaces/srv/AddTwoInts`, and the `turtlesim_msgs` package (`Pose`, `Color`, `Spawn`, `Kill`, `SetPen`, `TeleportAbsolute`, `TeleportRelative`, `RotateAbsolute`). Same field names/types as real ROS 2 (see the turtlesim spec below for the exact shapes we've confirmed from the tutorial text), just hand-written instead of generated. `ros2 interface show <type>` still needs to print the same field-listing format shown in the tutorials (request/response separated by `---`), reading from whatever internal representation those hand-written classes carry their field info in.
 
 ## turtlesim: exact behavior needed
 
@@ -122,7 +121,6 @@ No need to match the real `mcap`/`sqlite3` storage format. A simple recorded-mes
 - `launch <package> <launch_file.py>` (Python launch files; XML/YAML launch formats are not required for the pages we've copied)
 - `bag record [--topics ...|--all|--service ...|--all-services|--action ...|--all-actions] [-o name] [-d duration|-b size]`, `bag play [-i ...] [--publish-service-requests] [--send-actions-as-client]`, `bag info <bag>`
 - `doctor [--report]`
-- `plugin list` - only needed if we ever revisit Pluginlib; not required for current scope
 
 `simple-colcon`: `build [--symlink-install] [--packages-select ...] [--packages-up-to ...]`, `test [--packages-select ...]`
 
@@ -148,4 +146,6 @@ The full ROS 2 source tree is fetched upstream via `vcstool` against a repo mani
 
 ## Tutorial pages already copied into this repo
 
-`source/First-Steps.rst`, `source/Tutorials.rst`, all of `source/Tutorials/Beginner-CLI-Tools/` and `source/Tutorials/Beginner-Client-Libraries/` (see the per-page notes above for exclusions within that set: Pluginlib, and the C++ tracks of the pub/sub, service/client, and parameters pages).
+`source/First-Steps.rst`, `source/Tutorials.rst`, all of `source/Tutorials/Beginner-CLI-Tools/`, and `source/Tutorials/Beginner-Client-Libraries/` minus the removed pages listed above (Pluginlib, the C++ pub/sub and service/client and parameters pages, Custom-ROS2-Interfaces). Also `source/About-ROS.rst` and `source/Installation.rst` + `source/Installation/Ubuntu-Install-How-To.rst`, which are our own original content, not copied from upstream.
+
+Every remaining page has had its dangling cross-references into upstream sections we haven't copied (`How-To-Guides`, `Concepts`, `Tutorials/Intermediate`, `Tutorials/Demos`, anchors inside upstream's fuller Installation guide) trimmed out, dropping the surrounding sentence or section where the link was the only content. The Sphinx build is warning-free as of this pass; if a future content pull-in reintroduces one of those upstream sections, re-add the specific links back rather than leaving them dangling.

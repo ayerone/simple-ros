@@ -34,7 +34,7 @@ You should have ``ros2 bag`` installed as a part of your regular ROS 2 setup.
 If you need to install ROS 2, see the :doc:`Installation instructions <../../../Installation>`.
 
 This tutorial talks about concepts covered in previous tutorials, like :doc:`nodes <../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>`, :doc:`topics <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>`, :doc:`services <../Understanding-ROS2-Services/Understanding-ROS2-Services>` and :doc:`actions <../Understanding-ROS2-Actions/Understanding-ROS2-Actions>`.
-It also uses the :doc:`turtlesim package <../Introducing-Turtlesim/Introducing-Turtlesim>`, :doc:`Service Introspection Demo <../../Demos/Service-Introspection>` and :doc:`Action Introspection Demo <../../Demos/Action-Introspection>`.
+It also uses the :doc:`turtlesim package <../Introducing-Turtlesim/Introducing-Turtlesim>`.
 
 As always, don't forget to source ROS 2 in :doc:`every new terminal you open <../Configuring-ROS2-Environment>`.
 
@@ -332,7 +332,6 @@ You'll be recording service data between ``introspection_client`` and ``introspe
 To record service data between service client and server, ``Service Introspection`` must be enabled on the node.
 
 Let's start ``introspection_client`` and ``introspection_service`` nodes and enable ``Service Introspection``.
-You can see more details for :doc:`Service Introspection Demo <../../Demos/Service-Introspection>`.
 
 Open a new terminal and run ``introspection_service``, enabling ``Service Introspection``:
 
@@ -518,7 +517,6 @@ You'll be recording action data between ``fibonacci_action_client`` and ``fibona
 To record action data between action client and server, ``Action Introspection`` must be enabled on the nodes.
 
 Let's start ``fibonacci_action_client`` and ``fibonacci_action_server`` nodes and enable ``Action Introspection``.
-You can see more details for :doc:`Action Introspection Demo <../../Demos/Action-Introspection>`.
 
 Open a new terminal and run ``fibonacci_action_server``, enabling ``Action Introspection``:
 

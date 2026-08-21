@@ -69,8 +69,6 @@ To build the samples, you will need to install ROS 2.
 
 Follow the :doc:`installation instructions <../../Installation>`.
 
-.. attention:: If installing from deb packages, this tutorial requires the :ref:`desktop installation <linux-install-debs-install-ros-2-packages>`.
-
 Basics
 ------
 
@@ -163,10 +161,6 @@ In general, it is recommended to use an overlay when you plan to iterate on a sm
 
 Build the workspace
 ^^^^^^^^^^^^^^^^^^^
-
-.. attention::
-
-   To build packages on Windows you need to be in a Visual Studio environment, see :ref:`Building the ROS 2 Code <windows-dev-build-ros2>` for more details.
 
 In the root of the workspace, run ``colcon build``.
 Since build types such as ``ament_cmake`` do not support the concept of the ``devel`` space and require the package to be installed, colcon supports the option ``--symlink-install``.

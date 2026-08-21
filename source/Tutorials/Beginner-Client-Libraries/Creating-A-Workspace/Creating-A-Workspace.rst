@@ -37,7 +37,7 @@ Prerequisites
 * :doc:`colcon installation <../Colcon-Tutorial>`
 * `git installation <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`__
 * :doc:`turtlesim installation <../../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>`
-* Have :doc:`rosdep installed <../../Intermediate/Rosdep>`
+* Have ``rosdep`` installed
 * Understanding of basic terminal commands (`here's a guide for Linux <https://www2.cs.sfu.ca/~ggbaker/reference/unix/>`__)
 * Text editor of your choice
 
@@ -167,9 +167,6 @@ From the root of your workspace (``ros2_ws``), run the following command:
    .. group-tab:: Windows
 
       rosdep only runs on Linux, so you can skip ahead to section "5 Build the workspace with colcon".
-
-If you installed ROS 2 on Linux from source or the binary archive, you will need to use the rosdep command from their installation instructions.
-Here are the :ref:`from-source rosdep section <linux-development-setup-install-dependencies-using-rosdep>` and the :ref:`binary archive rosdep section <linux-install-binary-install-missing-dependencies>`.
 
 If you already have all your dependencies, the console will return:
 

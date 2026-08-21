@@ -225,8 +225,6 @@ Where as for non-DDS based RMW implementations like ``rmw_zenoh_cpp``, the ``End
       Liveliness: AUTOMATIC
       Liveliness lease duration: Infinite
 
-If you want to learn more about different RMW implementations, refer to the :doc:`About Different Middleware Vendors <../../../Concepts/Intermediate/About-Different-Middleware-Vendors>` concept.
-
 5 ros2 service find
 ^^^^^^^^^^^^^^^^^^^
 

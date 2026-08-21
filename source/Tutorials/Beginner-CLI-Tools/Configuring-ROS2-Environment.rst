@@ -163,8 +163,6 @@ If you need more specific help (because environment setup files can come from di
 3.1 The ``ROS_DOMAIN_ID`` variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the `domain ID <../../Concepts/Intermediate/About-Domain-ID>` article for details on ROS domain IDs.
-
 Once you have determined a unique integer for your group of ROS 2 nodes, you can set the environment variable with the following command:
 
 .. tabs::
@@ -211,7 +209,6 @@ Once you have determined a unique integer for your group of ROS 2 nodes, you can
 By default, ROS 2 communication is not limited to localhost.
 ``ROS_AUTOMATIC_DISCOVERY_RANGE`` environment variable allows you to limit ROS 2 discovery range.
 Using ``ROS_AUTOMATIC_DISCOVERY_RANGE`` is helpful in certain settings, such as classrooms, where multiple robots may publish to the same topic causing strange behaviors.
-See :ref:`Improved Dynamic Discovery <ImprovedDynamicDiscovery>` for more details.
 
 Summary
 -------

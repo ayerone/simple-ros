@@ -189,8 +189,3 @@ Next steps
 
 Now that you understand nodes in ROS 2, you can move on to the :doc:`topics tutorial <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>`.
 Topics are one of the communication types that connects nodes.
-
-Related content
----------------
-
-The :doc:`../../../Concepts` page adds some more detail to the concept of nodes.
