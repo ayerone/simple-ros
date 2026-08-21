@@ -60,7 +60,6 @@ This command will run the following launch file:
 .. note::
 
   The launch file above is written in Python, but you can also use XML and YAML to create launch files.
-  You can see a comparison of these different ROS 2 launch formats in :doc:`../../../How-To-Guides/Launch-file-different-formats`.
 
 This will run two turtlesim nodes:
 
