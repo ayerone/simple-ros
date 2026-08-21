@@ -8,5 +8,4 @@ A local subset of the ROS 2 documentation tutorials.
 
    About-ROS
    Installation
-   First-Steps
    Tutorials
