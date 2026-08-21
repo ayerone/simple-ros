@@ -19,8 +19,3 @@ For quick solutions to more specific questions, see the :doc:`How-To-Guides`.
    Tutorials/Advanced
    Tutorials/Demos
    Tutorials/Miscellaneous
-
-Examples
---------
-
-* `Python and C++ minimal examples <https://github.com/ros2/examples>`__.
