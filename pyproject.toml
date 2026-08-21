@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple-ros"
+version = "0.1.0"
+description = "A pure-Python stand-in for ROS 2, for learning the beginner tutorials without a real ROS 2 install."
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.scripts]
+simple-ros2 = "simple_ros2_cli.cli:main"
+
+[project.entry-points."simple_ros2.executables"]
+"turtlesim:turtlesim_node" = "turtlesim.turtlesim_node:main"
+"turtlesim:turtle_teleop_key" = "turtlesim.turtle_teleop_key:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
