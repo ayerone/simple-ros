@@ -2,14 +2,12 @@ import argparse
 import sys
 import time
 
-import yaml
-
 import rclpy
 from rclpy.node import Node
 from simple_ros_runtime import registry
 from simple_ros_runtime.errors import ros_error
 from simple_ros_runtime.serialization import from_wire
-from simple_ros2_cli._common import ephemeral_node_name, format_yaml, resolve_type
+from simple_ros2_cli._common import ephemeral_node_name, format_yaml, parse_field_yaml, resolve_type
 
 
 def run(argv: list) -> int:
@@ -116,7 +114,7 @@ def _pub(rest: list) -> int:
         return 1
 
     msg_type = resolve_type(args.type)
-    data = yaml.safe_load(args.values) or {}
+    data = parse_field_yaml(args.values)
 
     with rclpy.init(args=[]):
         node = Node(ephemeral_node_name())

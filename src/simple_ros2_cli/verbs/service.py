@@ -1,14 +1,12 @@
 import sys
 
-import yaml
-
 import rclpy
 from rclpy.executors import spin_until_future_complete
 from rclpy.node import Node
 from simple_ros_runtime import registry
 from simple_ros_runtime.errors import ros_error
 from simple_ros_runtime.serialization import from_wire
-from simple_ros2_cli._common import ephemeral_node_name, resolve_type
+from simple_ros2_cli._common import ephemeral_node_name, parse_field_yaml, resolve_type
 
 
 def run(argv: list) -> int:
@@ -72,7 +70,7 @@ def _call(rest: list) -> int:
     name, type_name, *values = rest
     yaml_args = values[0] if values else "{}"
     srv_type = resolve_type(type_name)
-    request = from_wire(srv_type.Request, yaml.safe_load(yaml_args) or {})
+    request = from_wire(srv_type.Request, parse_field_yaml(yaml_args))
 
     with rclpy.init(args=[]):
         node = Node(ephemeral_node_name())
