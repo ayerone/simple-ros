@@ -11,6 +11,14 @@ dependencies = [
     "PyYAML>=6.0",
 ]
 
+[project.optional-dependencies]
+docs = [
+    "Sphinx>=9",
+    "sphinx-rtd-theme>=3",
+    "sphinx-tabs>=3.5",
+    "sphinx-copybutton>=0.5",
+]
+
 [project.scripts]
 simple-ros2 = "simple_ros2_cli.cli:main"
 

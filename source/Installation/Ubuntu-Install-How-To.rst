@@ -75,10 +75,8 @@ Pick a location for it, the same way you'd pick a location for a ROS 2 workspace
 
     .. code-block:: console
 
-      $ git clone <REPO_URL> ~/simple_ros_src
+      $ git clone https://github.com/ayerone/simple-ros.git ~/simple_ros_src
       $ pip install -e ~/simple_ros_src
-
-    Replace ``<REPO_URL>`` with wherever this repository ends up hosted.
 
 5 Verify the install
 ^^^^^^^^^^^^^^^^^^^^^
