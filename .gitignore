@@ -5,3 +5,10 @@ __pycache__/
 *.pyc
 .pytest_cache/
 var/
+
+# Claude Code / dev-process meta files
+CLAUDE.md
+PLAN.md
+UPNEXT.md
+dev_log/
+log/
