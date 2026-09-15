@@ -7,6 +7,8 @@
 Understanding services
 ======================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Learn about services in ROS 2 using command line tools.
 
 **Tutorial level:** Beginner

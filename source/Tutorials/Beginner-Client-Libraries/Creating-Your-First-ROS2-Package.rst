@@ -7,6 +7,8 @@
 Creating a package
 ==================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Create a new package using either CMake or Python, and run its executable.
 
 **Tutorial level:** Beginner

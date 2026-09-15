@@ -7,6 +7,8 @@
 Recording and playing back data
 ===============================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Record data published on a topic, a service and an action so you can replay and examine it any time.
 
 **Tutorial level:** Beginner

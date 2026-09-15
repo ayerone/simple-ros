@@ -3,6 +3,8 @@
 Tutorials
 =========
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 The tutorials are a collection of step-by-step instructions meant to steadily build skills in ROS 2.
 
 The best way to approach the tutorials is to walk through them for the first time in order, as they build off of each other and are not meant to be comprehensive documentation.

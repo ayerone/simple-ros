@@ -7,6 +7,8 @@
 Using parameters in a class (Python)
 ====================================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Create and run a class with ROS parameters using Python.
 
 **Tutorial level:** Beginner

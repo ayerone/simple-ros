@@ -7,6 +7,8 @@
 Understanding actions
 =====================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Introspect actions in ROS 2.
 
 **Tutorial level:** Beginner

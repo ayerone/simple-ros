@@ -7,6 +7,8 @@
 Using ``rqt_console`` to view logs
 ==================================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Get to know ``rqt_console``, a tool for introspecting log messages.
 
 **Tutorial level:** Beginner

@@ -7,6 +7,8 @@
 Using ``ros2doctor`` to identify issues
 =======================================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Identify issues in your ROS 2 setup using the ``ros2doctor`` tool.
 
 **Tutorial level:** Beginner

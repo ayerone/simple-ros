@@ -7,6 +7,8 @@
 Understanding nodes
 ===================
 
+These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+
 **Goal:** Learn about the function of nodes in ROS 2, and the tools to interact with them.
 
 **Tutorial level:** Beginner
