@@ -12,6 +12,8 @@ What it is
 
 A from-scratch, pure-Python reimplementation of just enough of ROS 2 (nodes, topics, services, actions, parameters, and the ``rclpy`` API) to work through the official Beginner tutorials with no daemon, no DDS, and no system packages underneath. Node names, topic names, message and service shapes, and every ``rclpy`` call you write are identical to real ROS 2; the only things renamed are the outer command-line tools (``ros2`` becomes ``simple-ros2``, and so on), since those are the install step being replaced, not knowledge worth transferring.
 
+Based on ROS2 **Lyrical**.
+
 The tutorial pages on this site are the same tutorials published by the real ROS 2 project, run against simple-ros instead of a real ROS 2 install.
 
 What it is not

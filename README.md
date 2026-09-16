@@ -1,6 +1,6 @@
 # simple-ros
 
-A pure-Python stand-in for ROS 2, for learning the official Beginner tutorials without installing real ROS 2.
+A pure-Python stand-in for ROS 2, for learning the official Beginner tutorials without installing real ROS 2. Based on ROS2 **Lyrical**.
 
 **Docs: [ayerone.github.io/simple-ros](https://ayerone.github.io/simple-ros/)**
 
