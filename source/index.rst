@@ -5,7 +5,7 @@ simple-ros
 
    This is :doc:`simple-ros </About-simple-ros>`, not the official `ROS 2 project <https://docs.ros.org/en/lyrical/>`__.
 
-A local subset of the ROS 2 documentation tutorials.
+A pure-Python stand-in for ROS 2, for learning the official Beginner tutorials without installing real ROS 2.
 
 .. warning::
 
