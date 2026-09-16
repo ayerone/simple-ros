@@ -15,7 +15,7 @@ About ROS
 ROS (Robot Operating System) is an open-source ecosystem that provides the framework, tools, and libraries for building robotics applications.
 
 About simple-ros (this project)
-------------------
+--------------------------------
 
 `Github <https://github.com/ayerone/simple-ros>`__.
 
