@@ -81,13 +81,23 @@ Pick a location for it, the same way you'd pick a location for a ROS 2 workspace
 5 Verify the install
 ^^^^^^^^^^^^^^^^^^^^^
 
-With the virtual environment still active, check that the ``simple-ros2`` command is on your path:
+With the virtual environment still active, run a talker and a listener to check that two independent nodes can find each other and pass messages:
 
-.. code-block:: console
+#. In one terminal, activate the virtual environment, then run the talker:
 
-  $ simple-ros2 doctor
+   .. code-block:: console
 
-A working install reports its checks the same way real ROS 2's ``ros2 doctor`` does.
+     $ source ~/simple_ros_venv/bin/activate
+     $ simple-ros2 run demo_nodes_py talker
+
+#. In another terminal, activate the virtual environment, then run the listener:
+
+   .. code-block:: console
+
+     $ source ~/simple_ros_venv/bin/activate
+     $ simple-ros2 run demo_nodes_py listener
+
+   You should see the talker saying that it's publishing messages and the listener saying that it hears those messages.
 
 Next steps
 ----------
