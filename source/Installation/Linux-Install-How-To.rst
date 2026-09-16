@@ -77,4 +77,8 @@ You should see the talker publishing messages and the listener hearing them.
 Next steps
 ----------
 
-Continue to :doc:`First steps with ROS - learning path </First-Steps>`.
+After the installation is complete, you can proceed with :doc:`configuring your environment </Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment>`.
+
+We recommend that you get familiar with key ROS concepts and check out the tutorials:
+
+* :doc:`First steps with ROS - learning path </First-Steps>`
