@@ -10,12 +10,16 @@ About ROS 2 and simple-ros
 About ROS
 ---------
 
-ROS (Robot Operating System) is an open-source ecosystem that provides the framework, tools, and libraries for building, deploying, running, and maintaining robotic applications. If you want to know more, see the `official ROS documentation <https://docs.ros.org/en/lyrical/About-ROS.html>`__.
+`Official ROS page <https://docs.ros.org/en/lyrical/About-ROS.html>`__.
 
-About simple-ros
+ROS (Robot Operating System) is an open-source ecosystem that provides the framework, tools, and libraries for building robotics applications.
+
+About simple-ros (this project)
 ------------------
 
-simple-ros exists to remove the [somewhat complicated] installation step from learning ROS 2 basics. ``pip install`` in a virtual environment gives you a working stand-in for a full ROS 2 installation, so you can start learning with the tutorials instantly.
+`Github <https://github.com/ayerone/simple-ros>`__.
+
+simple-ros exists to remove the [somewhat complicated] installation step from learning ROS basics. ``pip install`` in a virtual environment gives you a working stand-in for a limited ROS 2 installation, so you can start learning with the tutorials instantly.
 
 What it is
 ^^^^^^^^^^^^
@@ -29,4 +33,4 @@ The tutorial pages on this site are the same tutorials published by the real ROS
 What it is not
 ^^^^^^^^^^^^^^^^
 
-Not a competing framework, and not aiming for performance, realism, or feature completeness beyond what the tutorials need.
+Not a competing framework, and not aiming for performance or feature completeness beyond what the tutorials need.
