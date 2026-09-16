@@ -7,6 +7,10 @@ simple-ros
 
 A local subset of the ROS 2 documentation tutorials.
 
+.. warning::
+
+   simple-ros is being developed live. Expect both the code and this documentation to be incomplete or occasionally wrong. See :doc:`Development-Status` for what's actually implemented today.
+
 .. toctree::
    :maxdepth: 2
 
