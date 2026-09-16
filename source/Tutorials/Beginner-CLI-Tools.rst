@@ -1,7 +1,9 @@
 Beginner: CLI tools
 ===================
 
-These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+.. container:: simple-ros-banner
+
+   These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
 
 .. toctree::
    :maxdepth: 1

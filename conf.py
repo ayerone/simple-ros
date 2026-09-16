@@ -19,6 +19,8 @@ extensions = [
 ]
 
 html_theme = 'sphinx_rtd_theme'
+html_static_path = ['source/_static']
+html_css_files = ['simple-ros.css']
 
 
 # Upstream pages use ".. redirect-from::" to record old URLs for their

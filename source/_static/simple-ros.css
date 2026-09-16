@@ -1,0 +1,11 @@
+.simple-ros-banner {
+    background: #f0f0f0;
+    border-left: 4px solid #ccc;
+    padding: 0.5em 1em;
+    margin-bottom: 1.5em;
+    font-style: italic;
+}
+
+.simple-ros-banner p {
+    margin: 0;
+}

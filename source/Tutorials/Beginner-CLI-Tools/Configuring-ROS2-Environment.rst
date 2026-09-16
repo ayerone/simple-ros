@@ -7,7 +7,9 @@
 Configuring environment
 =======================
 
-These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
+.. container:: simple-ros-banner
+
+   These are the tutorial docs for :doc:`simple-ros </About-simple-ros>`, borrowed from the `ros2 project <https://docs.ros.org/en/lyrical/>`__.
 
 **Goal:** This tutorial will show you how to prepare your ROS 2 environment.
 

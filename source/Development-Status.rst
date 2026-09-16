@@ -3,6 +3,10 @@
 Development Status
 ===================
 
+.. container:: simple-ros-banner
+
+   This is :doc:`simple-ros </About-simple-ros>`, not the official `ROS 2 project <https://docs.ros.org/en/lyrical/>`__.
+
 simple-ros is under active development. Not every tutorial on this site is runnable end-to-end yet. This page is the ground truth for what actually works today, kept current as new pieces land, so you don't have to guess whether a stuck command is your mistake or a feature we haven't built.
 
 **Area: ROS-framework | Content-type: reference | Experience: beginner**
