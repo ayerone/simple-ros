@@ -22,79 +22,68 @@ Prerequisites
 -------------
 
 * Ubuntu (any reasonably current release)
-* Python 3.10 or newer
-* The ``venv`` module, which ships with Python but is split into a separate Ubuntu package
+* Python 3.10 or newer, with the ``venv`` module available (on a minimal Ubuntu install this can mean ``sudo apt install python3-venv python3-pip`` first; see the `Basic Python setup <https://github.com/ayerone/simple-ros#basic-python-setup>`__ note in the project README if you're not sure)
+* ``git``
 
 Steps
 -----
 
-1 Install prerequisites
-^^^^^^^^^^^^^^^^^^^^^^^^
+simple-ros isn't published to PyPI yet, so it's installed from a clone of the repository rather than with a bare ``pip install simple-ros``.
+
+1 Clone the repository
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
-  $ sudo apt update
-  $ sudo apt install python3-venv python3-pip
+  $ git clone https://github.com/ayerone/simple-ros.git
+  $ cd simple-ros
 
 2 Create a virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Pick a location for it, the same way you'd pick a location for a ROS 2 workspace. This guide uses ``~/simple_ros_venv``:
+Create it inside the checkout, the same way a ROS 2 workspace's ``build``/``install`` directories live alongside its ``src``:
 
 .. code-block:: console
 
-  $ python3 -m venv ~/simple_ros_venv
+  $ python3 -m venv .venv
 
 3 Activate it
 ^^^^^^^^^^^^^^
 
 .. code-block:: console
 
-  $ source ~/simple_ros_venv/bin/activate
+  $ source .venv/bin/activate
 
 .. note::
 
-  You'll need to run this command in every new terminal before ``simple-ros2`` and the other simple-ros commands are available, exactly like sourcing a ROS 2 setup file. You can add it to your shell startup script (``~/.bashrc``) if you don't want to repeat it, the same tradeoff described in :doc:`Configuring environment </Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment>`.
+  You'll need to run this command, from inside the ``simple-ros`` checkout, in every new terminal before ``simple-ros2`` and the other simple-ros commands are available, exactly like sourcing a ROS 2 setup file. You can add it to your shell startup script (``~/.bashrc``) if you don't want to repeat it, the same tradeoff described in :doc:`Configuring environment </Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment>`.
 
 4 Install simple-ros
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. tabs::
+.. code-block:: console
 
-  .. group-tab:: From PyPI
+  $ pip install -e .
 
-    Once simple-ros is published, this is the normal path:
-
-    .. code-block:: console
-
-      $ pip install simple-ros
-
-  .. group-tab:: From source
-
-    Until then, or if you want an editable checkout to modify, clone the repository and install it in editable mode:
-
-    .. code-block:: console
-
-      $ git clone https://github.com/ayerone/simple-ros.git ~/simple_ros_src
-      $ pip install -e ~/simple_ros_src
+Editable mode (``-e``) means edits to the checkout take effect without reinstalling. Once simple-ros is published, ``pip install simple-ros`` into an activated virtual environment will work too, without needing a clone at all.
 
 5 Verify the install
 ^^^^^^^^^^^^^^^^^^^^^
 
-With the virtual environment still active, run a talker and a listener to check that two independent nodes can find each other and pass messages:
+Run a talker and a listener to check that two independent nodes can find each other and pass messages:
 
-#. In one terminal, activate the virtual environment, then run the talker:
+#. In one terminal, from inside the ``simple-ros`` checkout, activate the virtual environment, then run the talker:
 
    .. code-block:: console
 
-     $ source ~/simple_ros_venv/bin/activate
+     $ source .venv/bin/activate
      $ simple-ros2 run demo_nodes_py talker
 
-#. In another terminal, activate the virtual environment, then run the listener:
+#. In another terminal, from inside the same ``simple-ros`` checkout, activate the virtual environment, then run the listener:
 
    .. code-block:: console
 
-     $ source ~/simple_ros_venv/bin/activate
+     $ source .venv/bin/activate
      $ simple-ros2 run demo_nodes_py listener
 
    You should see the talker saying that it's publishing messages and the listener saying that it hears those messages.

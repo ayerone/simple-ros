@@ -7,13 +7,26 @@ A pure-Python stand-in for ROS 2, for learning the official Beginner tutorials w
 ## Quick start
 
 ```console
+$ git clone https://github.com/ayerone/simple-ros.git
+$ cd simple-ros
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 $ pip install -e .
-$ simple-ros2 doctor
 ```
 
-See the [docs site](https://ayerone.github.io/simple-ros/) for the full installation guide and tutorials.
+<details>
+<summary id="basic-python-setup">Basic Python setup</summary>
+
+If your system doesn't already have Python's venv/pip tooling:
+
+```console
+$ sudo apt update
+$ sudo apt install python3-venv python3-pip
+```
+
+</details>
+
+See the [docs site](https://ayerone.github.io/simple-ros/) for the full installation guide (including how to verify the install) and tutorials.
 
 ## What this is
 
