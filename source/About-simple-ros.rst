@@ -19,7 +19,7 @@ About simple-ros (this project)
 
 `Github <https://github.com/ayerone/simple-ros>`__.
 
-simple-ros exists to remove the [somewhat complicated] installation step from learning ROS basics. ``pip install`` in a virtual environment gives you a working stand-in for a limited ROS 2 installation, so you can start learning with the tutorials instantly.
+simple-ros exists to remove the [somewhat involved] installation step from learning ROS basics. ``pip install`` in a virtual environment gives you a working stand-in for a limited ROS 2 installation, so you can start learning with the tutorials instantly.
 
 What it is
 ^^^^^^^^^^^^

@@ -46,7 +46,7 @@ Steps
 
 .. note::
 
-  Run the ``source`` command, from inside the ``simple-ros`` checkout, in every new terminal before ``simple-ros2`` is available, the same as sourcing a ROS 2 setup file.
+  Real ROS 2 requires sourcing a "setup file" (``source /opt/ros/{distro}/setup.bash``) in every new terminal to make its tools available. simple-ros's equivalent is to source the virtual environment's setup script in a new terminal before running ``simple-ros2``, etc.
 
 3 Install simple-ros
 ^^^^^^^^^^^^^^^^^^^^^
