@@ -16,6 +16,11 @@ What works today
 
 Topics, services, and parameters are fully implemented, on top of a working ``turtlesim`` (a real ``tkinter`` window) and the ``simple-ros2`` command line tool. Concretely: nodes can publish and subscribe to topics, offer and call services, and declare/get/set parameters, all discovered peer-to-peer with no background daemon, exactly as described in the tutorials.
 
+Platform support
+------------------
+
+Linux only, for now. macOS is untested but has no known blocker. Windows genuinely does not work: every node crashes on startup (the registry's socket-path fallback calls ``os.getuid()``, which doesn't exist on Windows), and ``turtle_teleop_key`` fails to even import (it uses the POSIX-only ``termios``/``tty`` modules for raw keyboard input). Neither is a deliberately-scoped-out feature the way, say, actions are; they're just unaddressed.
+
 Tutorial-by-tutorial status
 ------------------------------
 

@@ -1,7 +1,7 @@
-.. _UbuntuInstallHowTo:
+.. _LinuxInstallHowTo:
 
-Installing on Ubuntu - how-to
-==============================
+Installing on Linux - how-to
+=============================
 
 **Goal:** Get simple-ros installed in a virtual environment and ready to work through the tutorials.
 
@@ -21,8 +21,8 @@ A Python virtual environment stands in for a ROS 2 "distro" install here. Creati
 Prerequisites
 -------------
 
-* Ubuntu (any reasonably current release)
-* Python 3.10 or newer, with the ``venv`` module available (on a minimal Ubuntu install this can mean ``sudo apt install python3-venv python3-pip`` first; see the `Basic Python setup <https://github.com/ayerone/simple-ros#basic-python-setup>`__ note in the project README if you're not sure)
+* Linux (any reasonably current distribution)
+* Python 3.10 or newer, with the ``venv`` module available (on a minimal Debian/Ubuntu install this can mean ``sudo apt install python3-venv python3-pip`` first; see the `Basic Python setup <https://github.com/ayerone/simple-ros#basic-python-setup>`__ note in the project README if you're not sure)
 * ``git``
 
 Steps
