@@ -10,7 +10,7 @@ A local subset of the ROS 2 documentation tutorials.
 .. toctree::
    :maxdepth: 2
 
+   About-simple-ros
    Installation
    Tutorials
-   About-simple-ros
    Development-Status
