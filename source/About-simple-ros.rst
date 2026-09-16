@@ -15,7 +15,7 @@ ROS (Robot Operating System) is an open-source ecosystem that provides the frame
 About simple-ros
 ------------------
 
-simple-ros exists to remove the [somewhat complicated] installation step from learning ROS 2. ``pip install`` in a virtual environment gives you a working stand-in for a full ROS 2 installation, so you can start learning with the tutorials instantly.
+simple-ros exists to remove the [somewhat complicated] installation step from learning ROS 2 basics. ``pip install`` in a virtual environment gives you a working stand-in for a full ROS 2 installation, so you can start learning with the tutorials instantly.
 
 What it is
 ^^^^^^^^^^^^
